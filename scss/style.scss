@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+
+$Very-Dark-Blue: hsl(234, 12%, 34%);
+$Grayish-Blue: hsl(229, 6%, 66%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 15px;
+  padding: 6rem 1rem;
+  background-color: $Very-Light-Gray;
+  min-height: 100vh;
+}
+
+p {
+  color: $Grayish-Blue;
+  font-weight: 400;
+}
+
+h4,
+h3 {
+  color: $Very-Dark-Blue;
+}
+
+header {
+  padding: 1rem;
+  padding-bottom: 4rem;
+  /*width: 22rem;*/
+  margin: 0 auto;
+  text-align: center;
+  h3 {
+    font-size: 1.563rem;
+    font-weight: 200;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  p {
+    padding-top: 2rem;
+    text-align: center;
+  }
+}
+
+main {
+  .card {
+    position: relative;
+    padding: 1.4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    margin-bottom: 1.6rem;
+    box-shadow: 0 6px 10px -2px hsla(229, 6%, 66%, 0.432);
+    overflow: hidden;
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      padding: 1rem 0;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+    }
+
+    img {
+      margin-left: 100%;
+      transform: translateX(-100%);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: $Cyan;
+      height: 4px;
+    }
+  }
+
+  .card2::before {
+    background-color: $Red;
+  }
+  .card3::before {
+    background-color: $Orange;
+  }
+  .card4::before {
+    background-color: $Blue;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  header {
+    width: initial;
+    max-width: 65ch;
+
+    h3 {
+      font-size: 1.953rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .card {
+      height: max-content;
+      p {
+        max-width: 35ch;
+      }
+    }
+  }
+}
